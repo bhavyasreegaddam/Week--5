@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone and Append Div</title>
+    <style>
+        .original, .clone {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .item {
+            padding: 5px;
+            border: 1px solid gray;
+            margin: 5px 0;
+        }
+        #cloneButton{
+            margin-left: 680px;
+        }
+        #target{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="original" class="original">
+        <h2>Original Div</h2>
+        <div class="item">Child 1</div>
+        <div class="item">Child 2</div>
+    </div>
+    
+    <button id="cloneButton">Clone and Append</button>
+    
+    <div id="target" class="target">
+        <h2>Target Div</h2>
+    </div>
+
+    <script>
+        document.getElementById('cloneButton').addEventListener('click', function() {
+            let originalDiv = document.getElementById('original');
+            let clonedDiv = originalDiv.cloneNode(true);
+            let targetDiv = document.getElementById('target');
+            targetDiv.appendChild(clonedDiv);
+        });
+    </script>
+</body>
+</html>

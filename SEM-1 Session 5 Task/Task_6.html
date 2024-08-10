@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <h1>Hello Everyone...</h1>
+        <div class="siblings">
+            <h2>Welcome to MITS</h2>
+            <button>Say Hii !</button>
+        </div>
+    </div>
+    <script>
+        function incrementalStyling(){
+            let container=document.querySelector(".siblings");
+            let element=container.firstElementChild;
+            let fontSize=18;
+            while(element){
+                element.style.fontSize=fontSize+'px';
+                element=element.nextElementSibling;
+                fontSize+=2;
+            }
+        }
+        window.onload = incrementalStyling;
+    </script>
+</body>
+</html>

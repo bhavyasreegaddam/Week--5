@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+        <li>Rasberry</li>
+    </ul>
+    <script>
+        let ul=document.getElementById('myList');
+        let li=document.createElement('li');
+        li.textContent='Jackfruit';
+        ul.appendChild(li);
+    </script>
+</body>
+</html>

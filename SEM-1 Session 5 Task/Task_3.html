@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Elements</title>
+</head>
+<body>
+    <ul>
+    <li>Paris</li>
+    <li>Germany</li>
+    <li>Japan</li>
+    <li>SwitzerLand</li>
+</ul>
+<script>
+    const ulElement=document.querySelector('ul');
+    const liElements=ulElement.querySelectorAll('li');
+    liElements.forEach(li=>{
+      console.log(li.textContent);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .large-image {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover {
+            border-color: #66afe9;
+            border:5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img id="large-image" class="large-image" src="https://i0.wp.com/picjumbo.com/wp-content/uploads/magical-spring-forest-scenery-during-morning-breeze-free-photo.jpg?w=600&quality=80" alt="Large Image">
+        <div class="thumbnails">
+            <img class="thumbnail" src="https://img.freepik.com/free-photo/beautiful-butterfly-nature_23-2150445556.jpg" alt="Thumbnail 1" data-large="image1.jpg">
+            <img class="thumbnail" src="https://img.freepik.com/free-photo/beautiful-butterfly-nature_23-2150445579.jpg" alt="Thumbnail 2" data-large="image2.jpg">
+            <img class="thumbnail" src="https://static.vecteezy.com/system/resources/thumbnails/016/936/912/small_2x/lavender-flowers-of-provence-with-beautiful-butterfly-in-a-meadow-in-nature-in-the-rays-of-sunlight-in-summer-in-the-spring-close-up-of-a-macro-closeup-nature-blurred-natural-wonderful-macro-photo.jpg" alt="Thumbnail 3" data-large="image3.jpg">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var thumbnails = document.querySelectorAll(".thumbnail");
+            var largeImage = document.getElementById("large-image");
+
+            thumbnails.forEach(function(thumbnail) {
+                thumbnail.addEventListener("click", function() {
+                    var newSrc = this.getAttribute("data-large");
+                    largeImage.src = newSrc;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

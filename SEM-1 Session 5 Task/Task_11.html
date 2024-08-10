@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+</head>
+<body>
+    <div id="div">
+        <h3>Tomato</h3>
+        <h3>Onion</h3>
+        <h3>Red Chilli</h3>
+        <h3>Capsicum</h3>
+        <h3>Blueberry</h3>
+    </div>
+    <button id="btn">Click</button>
+    <script>
+        //delete last element when button is clicked
+        document.getElementById('btn').addEventListener('click',function(){
+            let div=document.getElementById('div');
+            if(div.lastElementChild){
+                div.removeChild(div.lastElementChild);
+            }
+        });
+    </script>
+</body>
+</html>

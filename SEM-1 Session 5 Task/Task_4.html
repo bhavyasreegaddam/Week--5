@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Parent Border Color</title>
+    <style>
+        .parent {
+            border: 5px solid black;
+            padding: 20px;
+            margin: 20px;
+            margin-left:500px;
+            margin-right:800px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size:25px;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            Click me
+        </div>
+    </div>
+
+    <script>
+      document.querySelector('.child').addEventListener('click',function(){
+        const parent=this.parentNode;
+        parent.style.borderColor ='red';
+      })
+
+    </script>
+</body>
+</html>

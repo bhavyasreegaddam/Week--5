@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Events</title>
+</head>
+<body>
+    <script>
+        function logWindowDimensions(){
+            const width=window.innerWidth;
+            const height=window.innerHeight;
+            console.log(`width:${width},height:${height}`);
+        }
+        window.addEventListener('resize',logWindowDimensions);
+        logWindowDimensions();
+    </script>
+</body>
+</html>

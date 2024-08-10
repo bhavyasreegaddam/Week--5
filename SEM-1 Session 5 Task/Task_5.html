@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing the DOM</title>
+</head>
+<style>
+    .parent{
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="parent">
+       <h1>Welcome</h1>
+       <h2>Become a Content Creator</h2>
+       <h2>Become a Freelancer</h2>
+       <p>A content creator is an individual who produces and shares material across various media platforms. The rise of the internet and social media has expanded the scope and reach of content creators, making it possible for anyone to share their voice and talents with a global audience.</p>
+    </div>
+    <script>
+        parentDiv=document.querySelector('.parent');
+        //first child
+        let firstChild= parentDiv.firstElementChild;
+        firstChild.style.color='skyblue';
+        //last child
+        let lastChild=parentDiv.lastElementChild;
+        lastChild.style.backgroundColor='orange';
+    </script>
+</body>
+</html>

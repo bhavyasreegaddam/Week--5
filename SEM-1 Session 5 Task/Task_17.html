@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Highlight</title>
+    <style>
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            border-color: #66afe9;
+            box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+            outline: none;
+        }
+        #name{
+            width:300px;
+        }
+        #email{
+            width:300px;
+        }
+        #message{
+            width:300px;
+        }
+        form{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputs = document.querySelectorAll("input, textarea");
+
+            inputs.forEach(function(input) {
+                input.addEventListener("focus", function() {
+                    this.classList.add("highlight");
+                });
+
+                input.addEventListener("blur", function() {
+                    this.classList.remove("highlight");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

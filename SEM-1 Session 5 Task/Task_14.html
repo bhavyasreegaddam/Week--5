@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        button{
+            margin-left:70px;
+        }
+        #myForm{
+            /* border:2px solid red; */
+            text-align: center;
+            padding-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+            <span class="error" id="nameError">Name is required</span>
+        </div><br>  
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+            <span class="error" id="emailError">Email is required</span>
+        </div><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('myForm').addEventListener('submit',function(){
+            var name=document.getElementById('name');
+            var nameError=document.getElementById('nameError');
+            var email=document.getElementById('email');
+            var emailError=document.getElementById('emailError');
+            var formIsValid=true;
+            if(name.value===''){
+                nameError.style.display="inline";
+                formIsValid=false;
+            }
+            else{
+                nameError.style.display="none";
+            }
+            if(email.value===''){
+                emailError.style.display="inline";
+                formIsValid=false;
+            }
+            else{
+                emailError.style.display="none";
+            }
+            if(!formIsValid){
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
